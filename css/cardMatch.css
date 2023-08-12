@@ -1,0 +1,54 @@
+body {
+  width: 100%;
+  position: relative;
+}
+.cardMatch {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -0%);
+}
+#wrapper {
+  width: 600px;
+}
+
+.card {
+  display: inline-block;
+  width: 100px;
+  height: 150px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  perspective: 350px;
+}
+
+.card_inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card_inner {
+  transform: rotateY(180deg);
+}
+
+.card_front {
+  background: url("https://s2js.com/Nam/h1_logo1.png");
+}
+
+.card_back {
+  background: gray;
+  border: 1px solid black;
+}
+
+.card_front,
+.card_back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card_back {
+  transform: rotateY(180deg);
+}
